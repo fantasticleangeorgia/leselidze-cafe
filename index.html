@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Café Mirabelle | Boutique European Patisserie • Old Tbilisi</title>
+  <meta name="description" content="Artisan 1950s European-style patisserie and cafe hidden in Old Tbilisi, Georgia. Fresh daily berry pavlova, morning-baked Napoleon, and leafy courtyard dining.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥐</text></svg>">
+
+  <!-- Google Fonts: Editorial Serif + Clean Sans + Georgian Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Noto+Sans+Georgian:wght@400;500;600;700&family=Noto+Serif+Georgian:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar with Live Status & Operating Notice -->
+  <aside class="top-notice-bar" aria-label="Café Status Bar">
+    <div class="container top-notice-content">
+      <div class="notice-badge" id="topLiveStatus">
+        <span class="pulse-dot open" id="topPulseDot"></span>
+        <span id="topStatusText">Checking live Tbilisi hours...</span>
+      </div>
+      <div class="notice-links">
+        <span class="baking-prep-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span data-i18n="hero_fresh_alert">Morning-baked batch comes out at 09:00 AM daily</span>
+        </span>
+        <a href="#location" class="notice-link">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span data-i18n="address_short">14 Betlemi St, Sololaki</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Sticky Main Navigation Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Café Mirabelle Home">
+        <span class="brand-name">Café Mirabelle</span>
+        <span class="brand-sub" data-i18n="hero_badge">Patisserie • Old Tbilisi</span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="#story" class="nav-link" data-i18n="nav_story">Our Story</a></li>
+          <li><a href="#menu" class="nav-link" data-i18n="nav_menu">Menu</a></li>
+          <li><a href="#atmosphere" class="nav-link" data-i18n="nav_atmosphere">Atmosphere</a></li>
+          <li><a href="#reviews" class="nav-link" data-i18n="reviews_title">Reviews</a></li>
+          <li><a href="#reservation" class="nav-link" data-i18n="nav_reserve">Reserve</a></li>
+          <li><a href="#location" class="nav-link" data-i18n="nav_hours">Hours & Location</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions: My Booking, Lang Switcher & CTA -->
+      <div class="nav-actions">
+        <!-- My Reservation Ticket button (hidden if none, visible when booking exists) -->
+        <button type="button" class="btn-my-booking" id="btnMyBooking" style="display:none;" title="View Your Confirmed Booking">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-i18n="nav_my_booking">My Reservation</span>
+        </button>
+
+        <!-- Bilingual Switcher EN / KA -->
+        <div class="lang-switcher" role="group" aria-label="Language Switcher">
+          <button type="button" class="lang-btn active" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="ka">ქარ</button>
+        </div>
+
+        <!-- Primary CTA Button -->
+        <a href="#reservation" class="btn-caramel" data-i18n="hero_cta_reserve">Reserve a Table</a>
+
+        <!-- Mobile Drawer Toggle -->
+        <button type="button" class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-nav-drawer" id="mobileDrawer">
+    <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close Menu">&times;</button>
+    <ul class="mobile-nav-links">
+      <li><a href="#story" class="mobile-drawer-link" data-i18n="nav_story">Our Story</a></li>
+      <li><a href="#menu" class="mobile-drawer-link" data-i18n="nav_menu">Menu</a></li>
+      <li><a href="#atmosphere" class="mobile-drawer-link" data-i18n="nav_atmosphere">Atmosphere</a></li>
+      <li><a href="#reviews" class="mobile-drawer-link" data-i18n="reviews_title">Reviews</a></li>
+      <li><a href="#reservation" class="mobile-drawer-link" data-i18n="nav_reserve">Reserve a Table</a></li>
+      <li><a href="#location" class="mobile-drawer-link" data-i18n="nav_hours">Hours & Location</a></li>
+    </ul>
+    <div style="margin-top:auto; padding-top:2rem;">
+      <button type="button" class="btn-my-booking" id="mobileBtnMyBooking" style="display:none; width:100%; justify-content:center; margin-bottom:1rem;">
+        <span data-i18n="nav_my_booking">My Reservation</span>
+      </button>
+      <a href="#reservation" class="btn-caramel mobile-drawer-link" style="width:100%; justify-content:center;" data-i18n="hero_cta_reserve">Reserve a Table</a>
+    </div>
+  </aside>
+
+  <!-- Floating Pre-Order Tray (shown when items are selected) -->
+  <aside class="preorder-tray" id="preorderTray" aria-live="polite">
+    <div class="preorder-tray-info">
+      <span class="preorder-counter-badge" id="preorderCount">0</span>
+      <span data-i18n="preorder_bar_title">Pastries Saved for Your Table:</span>
+      <strong id="preorderTotalCost">₾0.00</strong>
+    </div>
+    <div style="display:flex; align-items:center; gap:0.5rem;">
+      <a href="#reservation" class="preorder-tray-action" data-i18n="preorder_bar_btn">Complete Reservation with Pastries</a>
+      <button type="button" id="btnClearPreorder" style="color:rgba(255,255,255,0.7); font-size:0.75rem;" data-i18n="preorder_clear">Clear</button>
+    </div>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main>
+
+    <!-- 1. Editorial Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <!-- Hero Text & Status -->
+        <div class="hero-content">
+          <div class="hero-badge-pill">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span data-i18n="hero_badge">Boutique European Patisserie • Old Tbilisi</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero_title_line1">Classic Parisian Pastries.</span><br>
+            <span data-i18n="hero_title_line2" style="color:var(--espresso); font-style:normal;">Hidden in Old Tbilisi.</span>
+          </h1>
+
+          <p class="hero-description" data-i18n="hero_desc">
+            Tucked inside a historic 19th-century Sololaki mansion, Café Mirabelle blends 1950s French baking craft with warm Georgian soul. Handcrafted morning tarts, warm brioche, and tranquil courtyard afternoons.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#reservation" class="btn-caramel" data-i18n="hero_cta_reserve">Reserve a Table</a>
+            <a href="#menu" class="btn-outline" data-i18n="hero_cta_menu">Explore Menu</a>
+          </div>
+
+          <!-- Live Tbilisi Status & Clock Card -->
+          <div class="hero-live-status-card">
+            <div class="status-indicator-wrap">
+              <span class="pulse-dot open" id="heroPulseDot"></span>
+              <div class="status-indicator-text">
+                <h4 id="heroStatusHeading">Open Now</h4>
+                <p id="heroStatusSub">Calculated live for Old Tbilisi</p>
+              </div>
+            </div>
+            <div class="tbilisi-clock-badge">
+              <div class="tbilisi-time" id="heroTbilisiClock">00:00:00</div>
+              <div class="tbilisi-label" data-i18n="hero_tbilisi_clock">Tbilisi Time (UTC+4)</div>
+            </div>
+          </div>
+
+          <!-- Google Review Trust Badge -->
+          <div class="hero-trust-bar">
+            <div class="trust-stars" aria-label="4.7 Stars">
+              <svg width="15" height="15" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <div class="trust-text" data-i18n="hero_review_score">4.7 ★ (815+ Google Reviews)</div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Photography -->
+        <div class="hero-visual">
+          <div class="hero-main-img-wrap">
+            <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1400&q=85" alt="Café Mirabelle interior with vintage Parisian charm and warm lighting" class="hero-main-img" loading="eager">
+          </div>
+
+          <!-- Stamp Badge -->
+          <div class="hero-stamp-badge">
+            <span>Depuis</span>
+            <span>1954</span>
+          </div>
+
+          <!-- Floating card -->
+          <div class="hero-floating-card">
+            <span class="kicker">Morning Secret</span>
+            <h4>Napoleon Batch</h4>
+            <p data-i18n="hero_fresh_alert">Fresh oven bake arrives daily at 09:00 AM</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Heritage & Story Section -->
+    <section class="section-padding story-section" id="story">
+      <div class="container story-grid">
+        <div class="story-imagery">
+          <div class="story-img-col">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Fresh baked Parisian croissants and pastry dough" class="story-img">
+          </div>
+          <div class="story-img-col">
+            <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80" alt="Old Tbilisi secluded courtyard with ivy" class="story-img">
+            <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=800&q=80" alt="Artisan fruit tartlet with fresh berries" class="story-img">
+          </div>
+        </div>
+
+        <div class="story-content">
+          <span class="kicker" data-i18n="gallery_kicker">Vintage Parisian Sololaki</span>
+          <h2 data-i18n="gallery_title">A Fairytale Sanctuary</h2>
+          <p data-i18n="gallery_subtitle">
+            Step from cobblestone lanes into velvet chairs, brass warmth, and sun-speckled garden leaves.
+          </p>
+          <p>
+            Café Mirabelle was born from a love letter between two storied cultures: the time-honored precision of 1950s French viennoiserie and the boundless hospitality of Old Tbilisi. Every recipe honors slow fermentation, pure Normandy cultured butter, and vibrant regional ingredients from Kakheti and Samegrelo.
+          </p>
+
+          <div class="story-pillars">
+            <div class="pillar-item">
+              <h4>09:00 AM</h4>
+              <p>Fresh oven bake daily. Our mille-feuille and pavlova crusts are prepared before sunrise.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Normandy Butter</h4>
+              <p>Authentic 84% fat French butter for airy brioche layers and crisp choux pastries.</p>
+            </div>
+            <div class="pillar-item">
+              <h4>Old Sololaki</h4>
+              <p>A quiet cobblestone sanctuary on Betlemi Street, shielded from the bustling city.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Interactive Filterable Menu Section -->
+    <section class="section-padding menu-section" id="menu">
+      <div class="container">
+        <div class="section-header">
+          <span class="kicker" data-i18n="menu_kicker">Curated Seasonal Collection</span>
+          <h2 data-i18n="menu_title">Artisanal Menu</h2>
+          <p data-i18n="menu_subtitle">Crafted each morning using farm-sourced Georgian ingredients, French butter, and genuine passion.</p>
+        </div>
+
+        <!-- Menu Category Filter Tabs -->
+        <nav class="menu-filter-nav" role="tablist" aria-label="Menu Categories">
+          <button type="button" class="menu-filter-btn active" data-category="all" role="tab" aria-selected="true" data-i18n="menu_cat_all">All Offerings</button>
+          <button type="button" class="menu-filter-btn" data-category="desserts" role="tab" aria-selected="false" data-i18n="menu_cat_desserts">Signature Desserts</button>
+          <button type="button" class="menu-filter-btn" data-category="hot_dishes" role="tab" aria-selected="false" data-i18n="menu_cat_hot">Hot Dishes</button>
+          <button type="button" class="menu-filter-btn" data-category="salads" role="tab" aria-selected="false" data-i18n="menu_cat_salads">Salads</button>
+          <button type="button" class="menu-filter-btn" data-category="drinks" role="tab" aria-selected="false" data-i18n="menu_cat_drinks">Coffee & Drinks</button>
+        </nav>
+
+        <!-- Menu Dishes Grid -->
+        <div class="menu-grid" id="menuGrid">
+          <!-- Rendered dynamically by JavaScript with current language and pre-order state -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Interactive Photo Gallery & Lightbox -->
+    <section class="section-padding gallery-section" id="atmosphere">
+      <div class="container">
+        <div class="section-header">
+          <span class="kicker" data-i18n="gallery_kicker">Vintage Parisian Sololaki</span>
+          <h2 data-i18n="gallery_title">A Fairytale Sanctuary</h2>
+          <p data-i18n="gallery_subtitle">Step from cobblestone lanes into velvet chairs, brass warmth, and sun-speckled garden leaves.</p>
+        </div>
+
+        <!-- Gallery Filters -->
+        <div class="gallery-filters" role="group" aria-label="Gallery Filters">
+          <button type="button" class="gallery-filter-btn active" data-gal-cat="all" data-i18n="gal_cat_all">All Views</button>
+          <button type="button" class="gallery-filter-btn" data-gal-cat="interior" data-i18n="gal_cat_interior">Interior & Vibe</button>
+          <button type="button" class="gallery-filter-btn" data-gal-cat="pastries" data-i18n="gal_cat_pastries">Pastries & Baking</button>
+          <button type="button" class="gallery-filter-btn" data-gal-cat="courtyard" data-i18n="gal_cat_courtyard">Outdoor Courtyard</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- Populated dynamically by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Guest Reviews Carousel -->
+    <section class="section-padding reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="kicker" data-i18n="reviews_kicker">Guest Memories</span>
+          <h2 data-i18n="reviews_title">Loved by Travelers & Locals Alike</h2>
+          <div class="trust-stars" style="justify-content:center; margin-top:0.5rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span style="margin-left:0.5rem; font-weight:700; color:var(--espresso);">4.7 / 5.0 (815+ reviews)</span>
+          </div>
+        </div>
+
+        <div class="reviews-carousel-wrap">
+          <div class="reviews-slider" id="reviewsSlider">
+            <!-- Rendered by JS -->
+          </div>
+
+          <div class="reviews-nav-controls">
+            <button type="button" class="review-nav-btn" id="prevReviewBtn" aria-label="Previous Review">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="review-dots" id="reviewDots"></div>
+            <button type="button" class="review-nav-btn" id="nextReviewBtn" aria-label="Next Review">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Smart Table Reservation System -->
+    <section class="section-padding reservation-section" id="reservation">
+      <div class="container reservation-container">
+        <div class="section-header">
+          <span class="kicker" data-i18n="res_kicker">Table & Pastry Reservation</span>
+          <h2 data-i18n="res_title">Book Your Table at Mirabelle</h2>
+          <p data-i18n="res_subtitle">Reservations are recommended for afternoon tea and weekend brunch. Pre-order our morning pastries so your favorites are held for your table.</p>
+        </div>
+
+        <div class="reservation-card">
+          <form id="reservationForm">
+            <div class="res-form-grid">
+              
+              <!-- Full Name -->
+              <div class="res-form-group">
+                <label for="resName" class="res-form-label" data-i18n="res_form_name">Full Name</label>
+                <input type="text" id="resName" name="name" class="res-input" required placeholder="e.g., Nino Bakradze">
+              </div>
+
+              <!-- Contact Phone/Email -->
+              <div class="res-form-group">
+                <label for="resContact" class="res-form-label" data-i18n="res_form_contact">Email or Phone Number</label>
+                <input type="text" id="resContact" name="contact" class="res-input" required placeholder="e.g., +995 599 12 34 56 or nino@example.com">
+              </div>
+
+              <!-- Date Picker (Mondays restricted) -->
+              <div class="res-form-group">
+                <label for="resDate" class="res-form-label">
+                  <span data-i18n="res_form_date">Date</span>
+                  <span class="label-sub" data-i18n="res_form_date_notice">Mondays are closed for baking prep</span>
+                </label>
+                <input type="date" id="resDate" name="date" class="res-input" required>
+                <!-- Monday warning notice banner -->
+                <div class="monday-alert-box" id="mondayAlert">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  <span data-i18n="res_badge_closed_monday">Please note: Mirabelle is closed on Mondays for artisan prep. Please select another day!</span>
+                </div>
+              </div>
+
+              <!-- Dynamic Time Slot (hours vary by day) -->
+              <div class="res-form-group">
+                <label for="resTime" class="res-form-label" data-i18n="res_form_time">Time Slot</label>
+                <select id="resTime" name="time" class="res-select" required>
+                  <option value="" disabled selected>Select an available time slot</option>
+                  <!-- Populated dynamically based on chosen day -->
+                </select>
+              </div>
+
+              <!-- Party Size -->
+              <div class="res-form-group">
+                <label for="resGuests" class="res-form-label" data-i18n="res_form_guests">Party Size</label>
+                <select id="resGuests" name="guests" class="res-select" required>
+                  <option value="1">1 Guest</option>
+                  <option value="2" selected>2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="7">7 Guests</option>
+                  <option value="8">8 Guests (Large Salon Table)</option>
+                </select>
+              </div>
+
+              <!-- Seating Area -->
+              <div class="res-form-group">
+                <label for="resSeating" class="res-form-label" data-i18n="res_form_seating">Seating Preference</label>
+                <select id="resSeating" name="seating" class="res-select">
+                  <option value="indoor" data-i18n="res_seat_indoor">Indoor Fairytale Room (Velvet & Sconces)</option>
+                  <option value="courtyard" data-i18n="res_seat_courtyard">Outdoor Courtyard (Cobblestones & Vines)</option>
+                </select>
+              </div>
+
+              <!-- Pastry Hold Checkbox Option -->
+              <div class="res-form-group full-width">
+                <label class="pastry-hold-card" for="pastryHoldCheck">
+                  <input type="checkbox" id="pastryHoldCheck" name="pastry_hold" class="custom-checkbox" checked>
+                  <div class="pastry-hold-text">
+                    <h4 data-i18n="res_pastry_hold_title">Hold Morning Pastries for My Table</h4>
+                    <p data-i18n="res_pastry_hold_desc">Due to high demand, our Napoleon and Medovik often sell out by 17:00. Check this to hold our morning-baked batch for your arrival.</p>
+                  </div>
+                </label>
+              </div>
+
+              <!-- Attached Pre-Order Items List (from Menu) -->
+              <div class="res-form-group full-width">
+                <div class="attached-preorders-box">
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <strong style="font-size:0.86rem; color:var(--espresso);" data-i18n="res_preorder_heading">Attached Pastry Pre-Orders:</strong>
+                    <a href="#menu" style="font-size:0.75rem; color:var(--caramel); text-decoration:underline;">+ Browse Menu to Add More</a>
+                  </div>
+                  <div class="attached-preorders-list" id="attachedPreordersList">
+                    <span style="font-size:0.8rem; color:var(--taupe);" data-i18n="res_preorder_empty">No pastries selected yet. You can add pastries directly from the menu above!</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Special Notes / Occasion / Allergies -->
+              <div class="res-form-group full-width">
+                <label for="resNotes" class="res-form-label" data-i18n="res_notes">Special Requests / Celebrations / Allergies</label>
+                <textarea id="resNotes" name="notes" class="res-textarea" placeholder="e.g., Birthday celebration, anniversary table by window, or dietary notes..."></textarea>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="res-form-group full-width">
+                <button type="submit" class="res-submit-btn" data-i18n="res_submit">Confirm Table Reservation</button>
+                <p class="res-guarantee-note" data-i18n="res_guarantee">Instant confirmation • No booking fee • Free cancellation</p>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Location, Live Schedule & Contact Footer -->
+    <section class="section-padding location-section" id="location">
+      <div class="container">
+        <div class="section-header">
+          <span class="kicker" data-i18n="loc_kicker">Finding Mirabelle</span>
+          <h2 data-i18n="loc_title">Hours, Location & Getting Here</h2>
+        </div>
+
+        <div class="location-grid">
+          <!-- Information Card -->
+          <div class="location-info-card">
+            <!-- Click-to-copy address box -->
+            <div class="address-copy-box" id="addressCopyBox" title="Click to copy full address">
+              <div class="address-details">
+                <h4 data-i18n="loc_address_label">Address in Old Tbilisi</h4>
+                <p id="addressText">14 Betlemi Street, Sololaki District, Old Tbilisi, 0105</p>
+              </div>
+              <div class="copy-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                <span data-i18n="loc_copy_address">Copy</span>
+              </div>
+            </div>
+
+            <!-- Weekly Schedule Table -->
+            <div class="schedule-table-wrap">
+              <h4 data-i18n="loc_hours_title">Operating Hours</h4>
+              <div class="schedule-table">
+                <!-- Tuesday - Friday -->
+                <div class="schedule-row" id="schedTueFri">
+                  <span class="schedule-day" data-i18n="loc_tue_fri">Tuesday – Friday</span>
+                  <span class="schedule-time">09:00 – 22:00</span>
+                </div>
+                <!-- Saturday - Sunday -->
+                <div class="schedule-row" id="schedSatSun">
+                  <span class="schedule-day" data-i18n="loc_sat_sun">Saturday – Sunday</span>
+                  <span class="schedule-time">10:00 – 23:00</span>
+                </div>
+                <!-- Monday (Closed) -->
+                <div class="schedule-row closed-day" id="schedMon">
+                  <span class="schedule-day" data-i18n="loc_mon">Monday</span>
+                  <span class="schedule-time" data-i18n="loc_mon_status">Closed (Artisan Prep)</span>
+                </div>
+              </div>
+              <div style="margin-top:1rem; font-size:0.8rem; color:var(--caramel); font-weight:600; display:flex; align-items:center; gap:0.4rem;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                <span data-i18n="loc_bake_badge">Fresh oven bake arrives daily at 09:00 AM</span>
+              </div>
+            </div>
+
+            <!-- Phone & Contact -->
+            <div style="margin-bottom:1.5rem;">
+              <h5 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--taupe); margin-bottom:0.3rem;">Telephone Reservations</h5>
+              <a href="tel:+995322148890" style="font-size:1.25rem; font-weight:700; color:var(--espresso); display:inline-flex; align-items:center; gap:0.5rem;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                +995 32 2 14 88 90
+              </a>
+            </div>
+
+            <!-- Delivery Links -->
+            <div class="delivery-wrap">
+              <h5 style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--taupe); margin-bottom:0.5rem;" data-i18n="loc_delivery_title">Delivery & Takeaway</h5>
+              <p style="font-size:0.82rem; margin-bottom:0.75rem;" data-i18n="loc_delivery_desc">Can't visit today? Order our fresh pastries directly to your door:</p>
+              <div class="delivery-partners">
+                <a href="https://wolt.com" target="_blank" rel="noopener noreferrer" class="btn-delivery">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                  Wolt
+                </a>
+                <a href="https://glovoapp.com" target="_blank" rel="noopener noreferrer" class="btn-delivery">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                  Glovo
+                </a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-delivery">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Embedded Google Map -->
+          <div class="map-wrap">
+            <iframe 
+              title="Café Mirabelle Location on Betlemi Street, Old Tbilisi"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.378940849202!2d44.801538615417075!3d41.69074097923749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cf613936057%3A0xa19f563ce9119637!2sBetlemi%20St%2C%20T&#39;bilisi!5e0!3m2!1sen!2sge!4v1680000000000!5m2!1sen!2sge" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <h3>Café Mirabelle</h3>
+          <p data-i18n="footer_tagline">A boutique European-style patisserie hidden in Old Tbilisi.</p>
+          <div style="margin-top:1.25rem; font-size:0.82rem; color:rgba(250,247,242,0.6);">
+            14 Betlemi Street, Sololaki District<br>
+            Tbilisi 0105, Georgia
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#story" data-i18n="nav_story">Our Story</a></li>
+            <li><a href="#menu" data-i18n="nav_menu">Menu</a></li>
+            <li><a href="#atmosphere" data-i18n="nav_atmosphere">Atmosphere</a></li>
+            <li><a href="#reviews" data-i18n="reviews_title">Reviews</a></li>
+            <li><a href="#reservation" data-i18n="nav_reserve">Reservation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Hours</h4>
+          <ul style="font-size:0.84rem; color:rgba(250,247,242,0.7);">
+            <li><strong>Tue – Fri:</strong> 09:00 – 22:00</li>
+            <li><strong>Sat – Sun:</strong> 10:00 – 23:00</li>
+            <li><strong style="color:var(--blush);">Monday:</strong> Closed (Artisan Prep)</li>
+            <li style="margin-top:0.5rem; color:var(--blush);">Fresh Bake: Daily 09:00 AM</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+995322148890">+995 32 2 14 88 90</a></li>
+            <li><a href="mailto:bonjour@cafemirabelle.ge">bonjour@cafemirabelle.ge</a></li>
+            <li><a href="https://instagram.com" target="_blank" rel="noopener">@cafemirabelle.tbilisi</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Café Mirabelle. <span data-i18n="footer_rights">All rights reserved. Designed with European elegance & Georgian soul.</span></p>
+        <p>Old Tbilisi, Georgia • Asia/Tbilisi (UTC+4)</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Bar -->
+  <aside class="mobile-sticky-bar" aria-label="Mobile Actions">
+    <div class="mobile-sticky-bar-inner">
+      <a href="tel:+995322148890" class="btn-outline" style="padding:0.75rem 0.9rem;" title="Call Café">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+      <a href="#menu" class="btn-outline" style="padding:0.75rem 1rem;" data-i18n="mobile_menu_btn">Menu</a>
+      <a href="#reservation" class="btn-caramel" data-i18n="mobile_reserve_btn">Reserve Table</a>
+    </div>
+  </aside>
+
+  <!-- Reservation Ticket Confirmation Modal -->
+  <div class="modal-backdrop" id="ticketModalBackdrop" role="dialog" aria-modal="true" aria-labelledby="ticketTitle">
+    <div class="ticket-modal-card">
+      <div class="ticket-header">
+        <button type="button" class="modal-close-btn" id="ticketModalClose" aria-label="Close Ticket">&times;</button>
+        <span class="kicker" style="color:var(--blush); margin-bottom:0.25rem;">Café Mirabelle • Table Voucher</span>
+        <h3 id="ticketTitle" data-i18n="ticket_title">Reservation Confirmed</h3>
+        <p data-i18n="ticket_subtitle">We look forward to welcoming you at Café Mirabelle.</p>
+      </div>
+
+      <div class="ticket-perforation">
+        <div class="ticket-perf-line"></div>
+      </div>
+
+      <div class="ticket-body">
+        <div class="ticket-grid">
+          <div class="ticket-item">
+            <h5 data-i18n="ticket_ref">Booking Code</h5>
+            <p id="tktBookingRef">MB-7842-TB</p>
+          </div>
+          <div class="ticket-item">
+            <h5 data-i18n="ticket_date">Date & Time</h5>
+            <p id="tktDateTime">Nov 28, 2026 • 15:30</p>
+          </div>
+          <div class="ticket-item">
+            <h5 data-i18n="ticket_guests">Party Size</h5>
+            <p id="tktGuests">2 Guests</p>
+          </div>
+          <div class="ticket-item">
+            <h5 data-i18n="ticket_seating">Seating Area</h5>
+            <p id="tktSeating">Indoor Fairytale Room</p>
+          </div>
+          <div class="ticket-item" style="grid-column: 1 / -1;">
+            <h5 data-i18n="ticket_contact">Guest Contact</h5>
+            <p id="tktContact">Nino Bakradze (+995 599 12 34 56)</p>
+          </div>
+          <div class="ticket-item" style="grid-column: 1 / -1;" id="tktPreordersWrap">
+            <h5 data-i18n="ticket_preorders">Reserved Pastries</h5>
+            <p id="tktPreordersList" style="font-size:0.88rem; font-weight:normal; color:var(--espresso);"></p>
+          </div>
+        </div>
+
+        <div id="tktPastryHoldNotice" style="background:var(--surface); border:1px solid var(--border-subtle); padding:0.6rem 0.85rem; border-radius:4px; font-size:0.8rem; color:var(--caramel-dark);" data-i18n="ticket_pastry_guarantee">
+          ✓ Pastry Hold Active: Your morning batch will be safely reserved.
+        </div>
+
+        <div class="ticket-barcode-wrap">
+          <div class="ticket-barcode" id="tktBarcode">||| | |||| | || |||| | |</div>
+          <span style="font-size:0.7rem; color:var(--taupe); margin-top:0.25rem;">Present code on arrival at 14 Betlemi Street</span>
+        </div>
+
+        <div class="ticket-actions">
+          <button type="button" class="btn-caramel" id="btnTicketPrint" style="flex:1; justify-content:center;" data-i18n="ticket_btn_print">Print / Save Ticket</button>
+          <button type="button" class="btn-outline" id="btnTicketCancel" style="flex:1; justify-content:center; color:#C62828; border-color:#C62828;" data-i18n="ticket_btn_cancel">Cancel Reservation</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Photo Gallery Lightbox -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true" aria-label="Photo Lightbox">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close Lightbox">&times;</button>
+    <button type="button" class="lightbox-btn prev" id="lightboxPrev" aria-label="Previous Photo">&#10094;</button>
+    
+    <div class="lightbox-content">
+      <img src="" alt="" class="lightbox-img" id="lightboxImg">
+      <div class="lightbox-caption">
+        <h4 id="lightboxTitle"></h4>
+        <p id="lightboxDesc"></p>
+      </div>
+    </div>
+
+    <button type="button" class="lightbox-btn next" id="lightboxNext" aria-label="Next Photo">&#10095;</button>
+  </div>
+
+  <!-- Floating Toast Notification -->
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
